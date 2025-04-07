@@ -7,10 +7,15 @@ app = FastAPI()
 def read_root():
     return {"message": "Welcome to the FastAPI demo!"}
 
-# Endpoint with a path parameter
 @app.get("/greet/{name}")
 def greet(name: str):
     return {"message": f"Hello, {name}!"}
+
+
+# Endpoint with a path parameter
+@app.get("/test/")
+def test():
+    return {"test": "alive"}
 
 # Endpoint with query parameter
 @app.get("/add")
